@@ -138,7 +138,7 @@ window.onload = function () {
       type: 2,
     },
     {
-      q: '"It rained all day. ____, 하루 종일 비가 왔어.\nWe stayed home." 그래서 우리는 집에 머물렀어.',
+      q: '"It rained all day. ____, 하루 종일 비가 왔어.',
       a: "therefore",
       type: 2,
     },
