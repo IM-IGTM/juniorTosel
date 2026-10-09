@@ -138,7 +138,7 @@ window.onload = function () {
       type: 2,
     },
     {
-      q: '"It rained all day. ____, 하루 종일 비가 왔어.',
+      q: '"It rained all day. ____,\n 하루 종일 비가 왔어.',
       a: "therefore",
       type: 2,
     },
