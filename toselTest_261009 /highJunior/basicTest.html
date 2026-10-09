@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="testJs.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="testWord.css" />
+    <title>TOSEL VOCA Test</title>
+  </head>
+  <body>
+    <div id="pwModal" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <h3>비밀번호 입력</h3>
+        <p>결과를 보려면 비밀번호를 입력해 주세요.</p>
+        <input type="password" id="pwInput" placeholder="비밀번호 입력" />
+        <div class="modal-buttons">
+          <button id="pwConfirmBtn" class="btn-confirm">확인</button>
+          <button id="pwCancelBtn" class="btn-cancel">취소</button>
+        </div>
+      </div>
+    </div>
+    <div class="page" id="page">
+      <div class="test-panel-wrapper">
+        <div class="test-header">
+          <div class="timer">
+            <span class="timer-icon">🕒</span>
+            <span id="timer-sec">10</span> sec
+          </div>
+          <div class="part-badge">Part A</div>
+          <div class="category-title">Vocabulary by Meaning</div>
+        </div>
+
+        <div class="quiz-container">
+          <div class="instruction-bar">
+            알맞은 단어를 고르세요.
+            <span class="info-icon">?</span>
+          </div>
+
+          <div class="question-word" id="questionLabel">요리하다</div>
+        </div>
+
+        <div class="submit-hint">
+          답안을 선택한 후 Space 키를 눌러 제출하세요.
+        </div>
+
+        <div class="choice-list-wrapper">
+          <button class="one choice-row-btn">
+            <span class="badge">1</span> <span class="opt-text">cook</span>
+          </button>
+          <button class="two choice-row-btn">
+            <span class="badge">2</span> <span class="opt-text">bake</span>
+          </button>
+          <button class="three choice-row-btn">
+            <span class="badge">3</span> <span class="opt-text">wash</span>
+          </button>
+          <button class="four choice-row-btn">
+            <span class="badge">4</span> <span class="opt-text">clean</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="examOver" style="display: none">
+        <p>수고하셨습니다. 시험이 종료되었습니다.</p>
+        <button class="resultOk" id="resultOk" onClick="resultOk()">
+          결과보기
+        </button>
+      </div>
+
+      <div class="answer-panel" style="display: none">
+        <h3>시험 결과</h3>
+        <div class="result-summary">
+          <p>이름: <span id="result-name"></span></p>
+          <p>
+            점수: <span id="result-correct">0</span> /
+            <span id="result-total">0</span>
+          </p>
+          <p class="summary-notice">
+            * 빨간색으로 표시된 칸은 틀린 문제입니다.
+          </p>
+        </div>
+        <hr />
+        <table class="answer-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
