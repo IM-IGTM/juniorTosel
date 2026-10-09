@@ -362,7 +362,7 @@ window.onload = function () {
     },
     {
       q: "Each ____ got a name tag.\nThe ____ sat near the front.",
-      a: "contestant",
+      a: "trainee",
       type: 3,
     },
     {
