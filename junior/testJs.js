@@ -560,6 +560,24 @@ window.onload = function () {
       }
     });
 
+    const partBadge = document.querySelector(".part-badge");
+    const categoryTitle = document.querySelector(".category-title");
+
+    if (partBadge) {
+      if (q.type === 1) {
+        partBadge.textContent = "Part A";
+        if (categoryTitle) categoryTitle.textContent = "Vocabulary by Meaning";
+      } else if (q.type === 2) {
+        partBadge.textContent = "Part B";
+        if (categoryTitle)
+          categoryTitle.textContent = "Sentence Completion (Short)";
+      } else if (q.type === 3) {
+        partBadge.textContent = "Part C";
+        if (categoryTitle)
+          categoryTitle.textContent = "Sentence Completion (Context)";
+      }
+    }
+
     // 기존 <img> 태그가 잔존해 있다면 완전히 삭제 (Basic은 이미지 사용 안 함)
     let existingImg = document.getElementById("questionImage");
     if (existingImg) {
