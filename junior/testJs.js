@@ -138,7 +138,7 @@ window.onload = function () {
       type: 2,
     },
     {
-      q: '"It rained all day. ____,\n 하루 종일 비가 왔어.',
+      q: "It rained all day. ____, the soccer game was canceled.\n 하루 종일 비가 왔어. 그래서 축구 경기가 취소됐어.",
       a: "therefore",
       type: 2,
     },
