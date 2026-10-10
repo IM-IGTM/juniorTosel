@@ -436,11 +436,18 @@ window.onload = function () {
   const allAnswers = rawData.map((item) => item.a);
 
   const questions = rawData.map((item) => {
-    const wrongOptions = shuffle(allAnswers.filter((a) => a !== item.a)).slice(
-      0,
-      3,
-    );
+    // 1. 기본 오답 풀 (자기 자신 정답 제외)
+    let candidatePool = allAnswers.filter((a) => a !== item.a);
+
+    // [★ 예외 처리] 정답이 "questionable"일 때 오답 후보에서 "irrelevant" 제외
+    if (item.a === "questionable") {
+      candidatePool = candidatePool.filter((a) => a !== "irrelevant");
+    }
+
+    // 2. 오답 3개 무작위 추출 및 전체 보기 셔플
+    const wrongOptions = shuffle(candidatePool).slice(0, 3);
     const options = shuffle([item.a, ...wrongOptions]);
+
     return {
       title: item.q,
       options: options,
